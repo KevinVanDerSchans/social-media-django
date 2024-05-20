@@ -1,6 +1,6 @@
 from django.db import models
 
-class Rooms(models.Model):
+class Room(models.Model):
     # host =
     # topic =
     name = models.CharField(max_length=200)
