@@ -7,7 +7,6 @@
     "check_template_tag_empty_lines": true,
     "blank_line_after_tag": "load,extends,include",
     "blank_line_before_tag": "load,extends,include",
-    "line_break_after_multiline_tag": true,
     "check_html_attribute_order": true,
     "check_newline_tag_argument": true,
     "check_boolean_attributes": true,
