@@ -7,7 +7,7 @@
       <div class="layout__box">
         <div class="layout__boxHeader">
           <div class="layout__boxTitle">
-            <a href="{% url 'home' %}">
+            <a href="{% url 'home' %}" aria-label="Go back to home">
               <svg version="1.1"
                    xmlns="http://www.w3.org/2000/svg"
                    width="32"
@@ -32,22 +32,20 @@
               <label for="room_topic">
                 Enter a Topic
               </label>
-              <input required
+              <input id="room_topic"
+                     required
                      type="text"
                      name="topic"
                      list="topic-list"
-                     value="{{ room.topic.name }}" />
+                     value="{{ room.topic.name }}"
+                     aria-label="Enter a Topic" />
 
               <datalist id="topic-list">
-                <select id="room_topic">
-                  {% for topic in topics %}
-
-                    <option value="{{ topic.name }}">
-                      {{ topic.name }}
-                    </option>
-
-                  {% endfor %}
-                </select>
+                {% for topic in topics %}
+                  <option value="{{ topic.name }}">
+                    {{ topic.name }}
+                  </option>
+                {% endfor %}
               </datalist>
             </div>
 
@@ -66,11 +64,11 @@
             </div>
 
             <div class="form__action">
-              <a class="btn btn--dark" href="{% url 'home' %}">
+              <a class="btn btn--dark" href="{% url 'home' %}" aria-label="Cancel">
                 Cancel
               </a>
 
-              <button class="btn btn--main" type="submit">
+              <button class="btn btn--main" type="submit" aria-label="Submit">
                 Submit
               </button>
             </div>
