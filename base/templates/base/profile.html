@@ -15,7 +15,7 @@
         <div class="profile">
           <div class="profile__avatar">
             <div class="avatar avatar--large active">
-              <img src="{{ user.avatar.url }}" alt="User image" />
+              <img src="{{ user.avatar.url }}" alt="{{ user.username }} avatar" />
             </div>
           </div>
 
@@ -28,7 +28,9 @@
             </p>
 
             {% if request.user == user %}
-              <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">
+              <a href="{% url 'update-user' %}"
+                 class="btn btn--main btn--pill"
+                 aria-label="Edit Profile">
                 Edit Profile
               </a>
             {% endif %}
