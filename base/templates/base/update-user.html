@@ -6,7 +6,7 @@
       <div class="layout__box">
         <div class="layout__boxHeader">
           <div class="layout__boxTitle">
-            <a href="{% url 'home' %}">
+            <a href="{% url 'home' %}" aria-label="Go back to home">
               <svg version="1.1"
                    xmlns="http://www.w3.org/2000/svg"
                    width="32"
@@ -29,19 +29,19 @@
 
             {% for field in form %}
               <div class="form__group">
-                <label for="profile_pic">
+                <label for="{{ field.id_for_label }}">
                   {{ field.label }}
-                  {{ field }}
                 </label>
+                {{ field }}
               </div>
             {% endfor %}
 
             <div class="form__action">
-              <a class="btn btn--dark" href="{% url 'home' %}">
+              <a class="btn btn--dark" href="{% url 'home' %}" aria-label="Cancel">
                 Cancel
               </a>
 
-              <button class="btn btn--main" type="submit">
+              <button class="btn btn--main" type="submit" aria-label="Update profile">
                 Update
               </button>
             </div>
