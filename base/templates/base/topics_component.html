@@ -6,14 +6,15 @@
   </div>
   <ul class="topics__list">
     <li>
-      <a href="{% url 'home' %}" class="active">
+      <a href="{% url 'home' %}" class="active" aria-label="All topics">
         All <span>{{ topics.count }}</span>
       </a>
     </li>
 
     {% for topic in topics %}
       <li>
-        <a href="{% url 'home' %}?q={{ topic.name }}">
+        <a href="{% url 'home' %}?q={{ topic.name }}"
+           aria-label="Browse topic: {{ topic.name }}">
           {{ topic.name }} <span>{{ topic.room_set.all.count }}</span>
         </a>
       </li>
@@ -21,7 +22,9 @@
 
   </ul>
 
-  <a class="btn btn--link" href="{% url 'topics' %}">
+  <a class="btn btn--link"
+     href="{% url 'topics' %}"
+     aria-label="View more topics">
     More
     <svg version="1.1"
          xmlns="http://www.w3.org/2000/svg"
