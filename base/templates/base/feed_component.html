@@ -4,9 +4,11 @@
     <div class="roomListRoom__header">
 
       <a href="{% url 'user-profile' room.host.id %}"
-         class="roomListRoom__author">
+         class="roomListRoom__author"
+         aria-label="View {{ room.host.username }} profile">
         <div class="avatar avatar--small">
-          <img src="{{ room.host.avatar.url }}" alt="User avatar" />
+          <img src="{{ room.host.avatar.url }}"
+               alt="{{ room.host.username }} avatar" />
         </div>
         <span>@{{ room.host.username }}</span>
       </a>
@@ -15,11 +17,16 @@
         <span>{{ room.created|timesince }} ago</span>
       </div>
     </div>
+
     <div class="roomListRoom__content">
-      <a href="{% url 'room' room.id %}">{{ room.name }}</a>
+      <a href="{% url 'room' room.id %}"
+         aria-label="View room {{ room.name }}">{{ room.name }}</a>
     </div>
+
     <div class="roomListRoom__meta">
-      <a href="{% url 'room' room.id %}" class="roomListRoom__joined">
+      <a href="{% url 'room' room.id %}"
+         class="roomListRoom__joined"
+         aria-label="{{ room.participants.all.count }} participants joined">
         <svg version="1.1"
              xmlns="http://www.w3.org/2000/svg"
              width="32"
@@ -37,7 +44,9 @@
         </svg>
         {{ room.participants.all.count }} Joined
       </a>
-      <p class="roomListRoom__topic">
+
+      <p class="roomListRoom__topic"
+         aria-label="Room topic: {{ room.topic.name }}">
         {{ room.topic.name }}
       </p>
     </div>
