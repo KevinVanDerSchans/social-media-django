@@ -21,17 +21,25 @@
             <form class="form" action="" method="POST">
               {% csrf_token %}
               <div class="form__group">
-                <label for="room_name">
+                <label for="username">
                   Email
                 </label>
-                <input id="username" name="email" type="email" placeholder="Email" />
+                <input id="username"
+                       name="email"
+                       type="email"
+                       placeholder="Email"
+                       aria-label="Email" />
               </div>
 
-              <div class=" form__group">
+              <div class="form__group">
                 <label for="password">
                   Password
                 </label>
-                <input id="password" name="password" type="password" placeholder="••••••••" />
+                <input id="password"
+                       name="password"
+                       type="password"
+                       placeholder="••••••••"
+                       aria-label="Password" />
               </div>
 
               <button class="btn btn--main" type="submit">
@@ -54,7 +62,9 @@
               <p>
                 Haven't signed up yet?
               </p>
-              <a href="{% url 'register' %}" class="btn btn--link">
+              <a href="{% url 'register' %}"
+                 class="btn btn--link"
+                 aria-label="Sign Up">
                 Sign Up
               </a>
             </div>
@@ -81,8 +91,8 @@
               {% csrf_token %}
 
               {% for field in form %}
-                <div class="form__group form__group">
-                  <label for="room_name">
+                <div class="form__group">
+                  <label for="{{ field.id_for_label }}">
                     {{ field.label }}
                   </label>
                   {{ field }}
@@ -107,10 +117,10 @@
 
             <div class="auth__action">
               <p>
-                Already signed up yet?
+                Already signed up?
               </p>
-              <a href="{% url 'login' %}" class="btn btn--link">
-                Sign Up
+              <a href="{% url 'login' %}" class="btn btn--link" aria-label="Login">
+                Login
               </a>
             </div>
           </div>
