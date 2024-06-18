@@ -22,10 +22,6 @@
 </div>
 
 <br>
-
-**DEPLOY**: <br> https://
-
-<br>
 <br>
 
 # Index
@@ -88,7 +84,7 @@
     <br>
     <br>
     <a href="https://www.django-rest-framework.org/" target="_blank" rel="noreferrer"> <img src="static/images/readme/django-rest-framework.svg" alt="Django REST Framework" width="60" height="60" style="margin-right: 24px"/></a>
-    <a href="https://www.djlint.com/" target="_blank" rel="noreferrer"> <img src="static/images/readme/djlint.png" alt="Djlint" width="90" height="60" style="margin-right: 24px"/></a>
+    <a href="https://www.djlint.com/" target="_blank" rel="noreferrer"> <img src="static/images/readme/djlint.png" alt="Djlint" width="100" height="60" style="margin-right: 24px"/></a>
   <br>
   <br>
 </div>
